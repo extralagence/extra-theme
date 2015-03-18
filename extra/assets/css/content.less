@@ -1,0 +1,623 @@
+/*********************
+ *
+ * RESET
+ *
+ ********************/
+*,
+*:before,
+*:after {
+	margin: 0px;
+	padding: 0px;
+	border: 0px none;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+}
+
+[hidden] {
+	display: none;
+}
+
+input,
+select,
+textarea {
+	font-family: Georgia, serif;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+input[type="search"],
+input[type="email"],
+input[type="text"] {
+	-webkit-appearance: initial;
+}
+
+/* SELECTIONS */
+::-moz-selection,
+::selection {
+	background: @black;
+	color: @white;
+	text-shadow: none;
+}
+
+/*********************
+ *
+ * CONTENT
+ *
+ ********************/
+body,
+.content {
+	color: @black;
+	font-family: @font1;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+a {
+	color: @highlight;
+	text-decoration: none;
+}
+
+a:hover {
+	color: @black;
+}
+
+.content p,
+.content ul,
+.content ol {
+	margin-bottom: 20px;
+}
+
+//.content li {
+//	margin-left: 20px;
+//	margin-bottom: 2px;
+//}
+//
+//.content li {
+//	list-style: none;
+//}
+//
+//.content li:before {
+//	background: @black;
+//	content: "";
+//	display: inline-block;
+//	line-height: 10px;
+//	margin: 0 10px 0 0;
+//	vertical-align: 3px;
+//	width: 5px;
+//	height: 5px;
+//}
+
+/* TITLES */
+h1 {
+	color: @black;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 30px;
+	margin: 0 0 12px 0;
+}
+h2 {
+	color: @black;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 30px;
+}
+.border-title {
+	border-bottom: 1px solid @grey;
+	padding-bottom: 2px;
+	margin: 23px 0 6px 0;
+}
+h3 {
+	color: @black;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 30px;
+	text-decoration: none;
+}
+.content h3 {
+	margin: 34px 0 3px 0;
+}
+
+h4 {
+	color: @black;
+	font-size: 16px;
+	font-weight: 700;
+	margin: 20px 0 10px 0;
+}
+
+h5 {
+	color: @black;
+	font-size: 14px;
+	font-weight: 400;
+	margin: 20px 0 5px 0;
+}
+
+h6 {
+	color: @black;
+	font-size: 13px;
+	font-weight: 400;
+	margin: 20px 0 5px 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: @black;
+	text-decoration: none;
+}
+
+.main-title,
+.content .main-title {
+	color: @black;
+	border-bottom: 5px solid @grey;
+	font-size: 25px;
+	font-weight: 700;
+	line-height: 30px;
+	margin: 7px 0 10px 0;
+	padding-bottom: 3px;
+}
+.chapo,
+.content .chapo {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 25px;
+	margin-bottom: 8px;
+}
+.chapo > *:last-child {
+	margin-bottom: 0;
+}
+
+/* HR */
+hr {
+	background: @black;
+	margin: 30px 0;
+	width: 100%;
+	height: 5px;
+}
+hr.cleaner {
+	background: transparent;
+	clear: both;
+	float: none;
+	margin: 0;
+	height: 0;
+}
+/* HR WAVE TODO */
+hr.wave {
+	height: 5px;
+	margin: 30px 0 25px;
+	background: transparent url('@{themeurl}/extra/assets/img/wave.png') repeat-x 0 0;
+}
+/* QUOTE */
+blockquote {
+	font-weight: 700;
+	font-style: italic;
+	padding: 30px 60px;
+	position: relative;
+	text-align: center;
+}
+blockquote:before {
+	content: "\201C";
+	display: block;
+	font-size: 50px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 50px;
+	height: 50px;
+}
+blockquote:after {
+	content: "\201D";
+	display: block;
+	font-size: 50px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 50px;
+	height: 50px;
+}
+
+/* IMG */
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 10px 20px;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	float: none;
+	margin: 10px auto;
+}
+
+/* ZOOM */
+.zoom {
+	display: block;
+	position: relative;
+}
+
+.zoom-icon,
+.content .zoom-icon {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.zoom-icon:after {
+	background: @white;
+	border-radius: 100%;
+	content: "+";
+	padding: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -25px 0 0 -25px;
+	width: 50px;
+	height: 50px;
+}
+/* BUTTON LINK */
+.link-button,
+.link-important {
+	display: inline-block;
+}
+.link-button {
+	background-color: @black;
+	color: @white;
+	font-family: @font2;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 9px 10px 6px 10px;
+	text-decoration: none;
+	white-space: nowrap;
+	text-transform: uppercase;
+}
+.link-button:hover {
+	background: @highlight;
+	color: @white;
+}
+.link-important {
+	font-size: 16px;
+	font-style: italic;
+	font-weight: 400;
+}
+.link-important:before {
+	content: "";
+	border-style: solid;
+	border-width: 5px 0 5px 5px;
+	border-color: transparent transparent transparent @highlight;
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: 1px;
+	width: 0px;
+	height: 0px;
+}
+.link-important:hover:before {
+	border-left-color: @black;
+}
+.link-big {
+	font-family: @font2;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin: 15px 0 0 0;
+}
+
+/* CAPTION */
+.wp-caption {
+	position: relative;
+	max-width: 100%;
+}
+
+.wp-caption-text,
+.fancybox-title-over-wrap {
+	background: @black;
+	background: rgba(red(@black), green(@black), blue(@black), 0.8);
+	color: @white;
+	display: block;
+	padding: 10px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+}
+
+/* FANCYBOX */
+.fancybox-title-over-wrap {
+	width: 100%;
+}
+
+.fancybox-skin .fancybox-title {
+	font-family: @font1;
+}
+
+/* HIDDEN */
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+/* MOSAIC GALLERY */
+.content .mosaic-gallery {
+	margin-bottom: 20px;
+}
+
+.content .mosaic-gallery li {
+	display: block;
+	float: left;
+	margin: 0px 10px 10px 0;
+	padding: 0px;
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+}
+
+.content .mosaic-gallery li:nth-child(3n) {
+	margin-right: 0px;
+}
+
+.content .mosaic-link {
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: normal;
+	text-align: center;
+}
+.invisible {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px; width: 1px;
+	margin: -1px; padding: 0; border: 0;
+}
+/*********************
+ *
+ * ICONS
+ *
+ ********************/
+@font-face {
+	font-family: 'extra';
+	src: url('@{themeurl}/extra/assets/fonts/extra.eot?4ru8za');
+	src: url('@{themeurl}/extra/assets/fonts/extra.eot?#iefix4ru8za') format('embedded-opentype'),
+         url('@{themeurl}/extra/assets/fonts/extra.svg?4ru8za#extra') format('svg'),
+         url('@{themeurl}/extra/assets/fonts/extra.woff?4ru8za') format('woff'),
+         url('@{themeurl}/extra/assets/fonts/extra.ttf?4ru8za') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+.icon {
+	font-family: 'extra';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+/************
+ *
+ *
+ * TOOLTIP
+ *
+ *
+ ************/
+.extra-tooltip {
+	background: @black;
+	color: @white;
+	display: block;
+	font-size: 12px;
+	font-weight: 800;
+	padding: 5px 10px 5px 10px;
+	position: absolute;
+	left: 50%;
+	bottom: -45px;
+	z-index: 999;
+	text-align: center;
+	text-indent: 0px;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	width: auto;
+}
+.extra-tooltip:after {
+	content: "";
+	display: block;
+	margin-left: -5px;
+	position: absolute;
+	top: -5px;
+	left: 50%;
+	z-index: 1;
+	width: 0;
+	height: 0;
+	border-top: 0px none;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid @black;
+}
+
+
+/*********************
+ *
+ * LOADER
+ *
+ ********************/
+.extra-loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 4px;
+	min-width: 60px;
+	pointer-events: none;
+}
+.extra-loader > .inner {
+	width: 20px;
+	height: 4px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -2px;
+	margin-left: -10px;
+}
+.extra-loader .part {
+	width: 4px;
+	height: 4px;
+	border-radius: 2px;
+	background-color: @black;
+	position: absolute;
+	top: 0;
+	opacity: 0.7;
+}
+.extra-loader .part-1 {
+	left: 0;
+}
+.extra-loader .part-2 {
+	left: 8px;
+}
+.extra-loader .part-3 {
+	left: 16px;
+}
+
+/*********************
+ *
+ * BORDER FILL
+ *
+ ********************/
+.border-fill .square {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.border-fill .square.default {
+	border:   1px solid rgba(red(@black), green(@black), blue(@black), 0.2);
+}
+
+.border-fill .square.over {
+	-webkit-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	transform: rotate(135deg);
+
+	opacity: 0;
+}
+.border-fill .square.over:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border: 1px solid rgba(red(@highlight), green(@highlight), blue(@highlight), 0.6);
+	-webkit-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+
+/*********************
+ *
+ * TOTOP & BACK BUTTON
+ *
+ ********************/
+.back-button,
+.custom-totop {
+	position:    relative;
+	display:     block;
+	margin:      0 auto;
+	width:       50px;
+	height:      50px;
+	white-space: nowrap;
+	text-indent: 50px;
+	overflow: hidden;
+}
+.back-button {
+	margin: 0 0 10px 0;
+}
+
+.back-button .icon,
+.custom-totop .icon {
+	fill:               @black;
+	display:            block;
+	position:           absolute;
+	width:              50px;
+	height:             50px;
+	top:                0;
+	left:               0;
+
+	-webkit-transition: fill 300ms ease-out;
+	transition:         fill 300ms ease-out;
+}
+
+.back-button:hover .icon,
+.custom-totop:hover .icon {
+	fill: @highlight;
+}
+
+/************
+ *
+ *
+ * EASY CLEARING
+ *
+ *
+ ************/
+#foo:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}

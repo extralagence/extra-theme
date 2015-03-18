@@ -1,0 +1,46 @@
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+nav, 
+section { 
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	border: 0px none;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing : border-box;
+}
+audio,
+canvas,
+video { 
+	display: inline-block; 
+	padding: 0px;
+	margin: 0px;
+	border: 0px none;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing : border-box;
+}
+/* EASY CLEARING */
+.lte7 #main-menu,
+.lte7 #menu-footer {
+ 	display: inline;
+ 	zoom: 1;
+}
+.ie8 #main-menu:after,
+.ie8 #menu-footer:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.lte8 #menu-footer-wrapper {
+	overflow: hidden;
+}

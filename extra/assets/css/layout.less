@@ -1,0 +1,117 @@
+/*********************
+ *
+ * BODY
+ *
+ ********************/
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	background-color: @grey;
+	position: relative;
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*********************
+ *
+ * CONTENT
+ *
+ ********************/
+/* SHARE */
+.share {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #c4c4c4;
+}
+/*********************
+ *
+ * MAIN
+ *
+ ********************/
+.main-wrapper {
+	margin: auto;
+	padding: 40px 0 0 0;
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	min-height: 10px;
+}
+.right-content {
+	float: right;
+	min-height: 1px;
+}
+.left-content {
+	float: left;
+	min-height: 1px;
+}
+.small-content {
+	width: 50%;
+}
+.large-content {
+	width: auto;
+}
+.full-content {
+	width: 100%;
+}
+/*********************
+ *
+ * EASY CLEARING
+ *
+ ********************/
+.main-wrapper:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/*********************
+ *
+ * TABLETTE AND LESS
+ *
+ ********************/
+@media only screen and (max-width: 960px) {
+	/*********************
+	 * HEADER
+	 ********************/
+	body {
+		width: 100%;
+		min-width: 100%;
+	}
+	/*********************
+	 * SITE TITLE
+	 ********************/
+	#header .site-title {
+		margin: auto;
+	}
+	/*********************
+	 * 100% WIDTH
+	 ********************/
+//	#header > .wrapper, #arianne, #arianne .inner, #main > .wrapper, #footer .push, #footer .pushs .wrapper, #menu-footer, #menu-footer li, .main-content, .sidebar {
+//		display: block;
+//		float: none;
+//		margin: 0px;
+//		width: 100%;
+//	}
+	/*********************
+	 * ARIANNE
+	 ********************/
+	#arianne .inner {
+		line-height: 0px;
+		padding-left: 10px;
+	}
+}
+/*********************
+ *
+ * SMARTPHONE
+ *
+ ********************/
+@media only screen and (max-width: 690px) {
+
+}
