@@ -1,0 +1,3 @@
+[submodule "extra-framework"]
+	path = extra-framework
+	url = https://github.com/extralagence/extra-framework.git
