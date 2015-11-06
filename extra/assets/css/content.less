@@ -52,9 +52,11 @@ audio:not([controls]) {
 [hidden] {
 	display: none;
 }
+button,
 input,
 select,
 textarea {
+	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
@@ -63,6 +65,9 @@ input[type="search"],
 input[type="email"],
 input[type="text"] {
 	-webkit-appearance: initial;
+}
+button {
+	cursor: pointer;
 }
 /* SELECTIONS */
 ::-moz-selection {
