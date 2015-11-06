@@ -25,9 +25,29 @@ global $extra_options;
 	<!-- TITLE -->
 	<title><?php wp_title( '|' ); ?></title>
 
-	<!-- REMOVE NO-JS -->
 	<!--noptimize-->
-	<script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '') + ' js';</script>
+	<script>
+		///////////////////////////////////////
+		//
+		//
+		// JS / NO-JS
+		//
+		//
+		///////////////////////////////////////
+		document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '') + ' js';
+		///////////////////////////////////////
+		//
+		//
+		// WEBFONT LOADER
+		//
+		//
+		///////////////////////////////////////
+		WebFontConfig = {
+			typekit: {
+				id: 'uqv1dkx'
+			}
+		};
+	</script>
 	<!--/noptimize-->
 
 	<!-- MOBILE FRIENDLY -->
