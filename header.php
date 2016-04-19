@@ -65,11 +65,17 @@ global $extra_options;
 		<?php if ( is_front_page() ): ?>
 			<h1 class="site-title">
 				<span class="text"><?php bloginfo( "name" ); ?></span>
+				<svg id="logo">
+					<use xlink:href="#icon-logo"></use>
+				</svg>
 			</h1>
 		<?php else: ?>
 			<h2 class="site-title">
 				<a href="<?php echo site_url( '/' ); ?>" title="<?php _e( "Retour à l'accueil", 'extra' ); ?>">
 					<span class="text"><?php bloginfo( "name" ); ?></span>
+					<svg id="logo">
+						<use xlink:href="#icon-logo"></use>
+					</svg>
 				</a>
 			</h2>
 		<?php endif; ?>
