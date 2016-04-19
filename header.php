@@ -8,9 +8,9 @@ global $extra_options;
 <html <?php language_attributes(); ?> class="no-js" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
-	<link rel="profile" href="http://gmpg.org/xfn/11"/>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<!--
 	EEEEEEEEEEE               EEEE
@@ -27,26 +27,7 @@ global $extra_options;
 
 	<!--noptimize-->
 	<script>
-		///////////////////////////////////////
-		//
-		//
-		// JS / NO-JS
-		//
-		//
-		///////////////////////////////////////
 		document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '') + ' js';
-		///////////////////////////////////////
-		//
-		//
-		// WEBFONT LOADER
-		//
-		//
-		///////////////////////////////////////
-		WebFontConfig = {
-			typekit: {
-				id: 'uqv1dkx'
-			}
-		};
 	</script>
 	<!--/noptimize-->
 
@@ -59,44 +40,47 @@ global $extra_options;
 </head>
 <body <?php body_class(); ?>>
 
-	<button id="switch-mobile-menu" class="extra-menu-button">
-		<span class="extra-menu-button-inner"></span>
-	</button>
 
-	<header class="extra-menu" id="mobile-menu-container">
+<input id="mobile-menu-switch-manager" type="checkbox">
+<label for="mobile-menu-switch-manager" id="mobile-menu-switcher">
+	<span class="mobile-menu-switcher-inner"></span>
+</label>
+<label id="mobile-menu-overlay" for="mobile-menu-switch-manager"></label>
 
-		<?php $args = array(
-			'theme_location' => 'mobile',
-			'container'      => 'div',
-			'container_id'   => 'mobile-menu',
-			'menu_id'        => null
-		);
-		wp_nav_menu( $args ); ?>
-	</header>
 
-	<div id="wrapper">
+<header id="mobile-menu-container">
+	<?php $args = array(
+		'theme_location' => 'mobile',
+		'container'      => 'div',
+		'container_id'   => 'mobile-menu',
+		'menu_id'        => null
+	);
+	wp_nav_menu( $args ); ?>
+</header>
 
-		<header id="header">
-			<!-- SITE TITLE (LOGO) -->
-			<?php if ( is_front_page() ): ?>
-				<h1 class="site-title">
+<div id="wrapper">
+
+	<header id="header">
+		<!-- SITE TITLE (LOGO) -->
+		<?php if ( is_front_page() ): ?>
+			<h1 class="site-title">
+				<span class="text"><?php bloginfo( "name" ); ?></span>
+			</h1>
+		<?php else: ?>
+			<h2 class="site-title">
+				<a href="<?php echo site_url( '/' ); ?>" title="<?php _e( "Retour à l'accueil", 'extra' ); ?>">
 					<span class="text"><?php bloginfo( "name" ); ?></span>
-				</h1>
-			<?php else: ?>
-				<h2 class="site-title">
-					<a href="<?php echo site_url( '/' ); ?>" title="<?php _e( "Retour à l'accueil", 'extra' ); ?>">
-						<span class="text"><?php bloginfo( "name" ); ?></span>
-					</a>
-				</h2>
-			<?php endif; ?>
+				</a>
+			</h2>
+		<?php endif; ?>
 
-			<!-- MAIN NAV -->
-			<nav id="main-menu-container">
-				<?php $args = array(
-					'theme_location' => 'main',
-					'container'      => null,
-					'menu_id'        => 'main-menu'
-				);
-				wp_nav_menu( $args ); ?>
-			</nav>
-		</header>
+		<!-- MAIN NAV -->
+		<nav id="main-menu-container">
+			<?php $args = array(
+				'theme_location' => 'main',
+				'container'      => null,
+				'menu_id'        => 'main-menu'
+			);
+			wp_nav_menu( $args ); ?>
+		</nav>
+	</header>
