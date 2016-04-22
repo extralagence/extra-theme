@@ -43,24 +43,3 @@ function _blank_tinymce( $init ) {
 }
 
 add_filter( 'tiny_mce_before_init', '_blank_tinymce' );
-
-/**********************
- *
- *
- *
- * ADD GLOBAL PARAMETERS
- *
- *
- *
- *********************/
-//add_filter('extra_add_global_options_section', function ($sections) {
-//	$sections[] = array(
-//		'icon' => 'el-icon-file',
-//		'title' => __('Paramètres d\'exemple', 'extra-admin'),
-//		'desc' => null,
-//		'fields' => array(
-//
-//		)
-//	);
-//	return $sections;
-//});
