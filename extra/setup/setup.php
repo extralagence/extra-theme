@@ -44,8 +44,7 @@ add_action('after_setup_theme', 'extra_setup');
 //
 ///////////////////////////////////////
 function extra_theme_less_vars($vars, $handle) {
-	$vars['font1'] = 'arial, sans-serif';
-	$vars['font2'] = 'georgia, serif';
+	$vars['font'] = 'arial, sans-serif';
 	$vars['white'] = '#ffffff';
 	$vars['black'] = '#000000';
 	$vars['dark'] = '#333333';
