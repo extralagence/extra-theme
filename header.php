@@ -22,14 +22,23 @@ global $extra_options;
 	EEEEEEEEEEE EEEE   EEEE   EEEEEE  EEEE     EEEEE EEEE
 	-->
 
+	<!-- FOR ANDROID -->
+	<meta name="theme-color" content="#FF0000">
+
 	<!-- TITLE -->
 	<title><?php wp_title( '|' ); ?></title>
 
-	<!--noptimize-->
+	<!-- JS CHECKER -->
 	<script>
 		document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '') + ' js';
 	</script>
-	<!--/noptimize-->
+
+	<!-- TYPEKIT -->
+	<script src="https://use.typekit.net/zed3dwt.js"></script>
+	<script>try {
+			Typekit.load({async: true});
+		} catch (e) {
+		}</script>
 
 	<!-- MOBILE FRIENDLY -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,54 +48,10 @@ global $extra_options;
 
 </head>
 <body <?php body_class(); ?>>
+<?php get_template_part( 'extra/modules/fancybox/templates/header-part-fancybox' ); ?>
+<?php get_template_part( 'extra/templates/header/header-mobile' ); ?>
+<?php echo get_search_form(); ?>
 
-
-<input id="mobile-menu-switch-manager" type="checkbox">
-<label for="mobile-menu-switch-manager" id="mobile-menu-switcher">
-	<span class="mobile-menu-switcher-inner"></span>
-</label>
-<label id="mobile-menu-overlay" for="mobile-menu-switch-manager"></label>
-
-
-<header id="mobile-menu-container">
-	<?php $args = array(
-		'theme_location' => 'mobile',
-		'container'      => 'div',
-		'container_id'   => 'mobile-menu',
-		'menu_id'        => null
-	);
-	wp_nav_menu( $args ); ?>
-</header>
 
 <div id="wrapper">
-
-	<header id="header">
-		<!-- SITE TITLE (LOGO) -->
-		<?php if ( is_front_page() ): ?>
-			<h1 class="site-title">
-				<span class="text"><?php bloginfo( "name" ); ?></span>
-				<svg id="logo">
-					<use xlink:href="#icon-logo"></use>
-				</svg>
-			</h1>
-		<?php else: ?>
-			<h2 class="site-title">
-				<a href="<?php echo site_url( '/' ); ?>" title="<?php _e( "Retour à l'accueil", 'extra' ); ?>">
-					<span class="text"><?php bloginfo( "name" ); ?></span>
-					<svg id="logo">
-						<use xlink:href="#icon-logo"></use>
-					</svg>
-				</a>
-			</h2>
-		<?php endif; ?>
-
-		<!-- MAIN NAV -->
-		<nav id="main-menu-container">
-			<?php $args = array(
-				'theme_location' => 'main',
-				'container'      => null,
-				'menu_id'        => 'main-menu'
-			);
-			wp_nav_menu( $args ); ?>
-		</nav>
-	</header>
+<?php get_template_part( 'extra/templates/header/header-desktop' ); ?>

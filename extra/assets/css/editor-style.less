@@ -15,27 +15,28 @@
 ///////////////////////////////////////
 html {
 	background: @grey;
-	height: 95%;
 }
 html:before, html:after {
 	content: '';
 	display: block;
 	height: 10px;
 	background: @white;
-	width: 500px;
+	width: 1080px;
 	margin: 0 auto;
 }
 body {
 	background: @white;
-	padding: 1px 10px;
+	padding: 60px;
 	margin: 0 auto;
 	height: auto;
 	min-height: 100%;
-	width: 500px;
+	width: 1080px;
 }
 body.wp-autoresize.content {
-	padding-left: 10px !important;
-	padding-right: 10px !important;
+	padding-top: 60px !important;
+	padding-right: 60px !important;
+	padding-bottom: 60px !important;
+	padding-left: 60px !important;
 }
 ///////////////////////////////////////
 //
@@ -45,36 +46,24 @@ body.wp-autoresize.content {
 //
 ///////////////////////////////////////
 .mceContentBody hr.cleaner {
-  background: red;
-  clear: both;
-  float: none;
-  margin: 10px 0;
-  height: 2px;
-}
-///////////////////////////////////////
-//
-//
-// CAPTIONS
-//
-//
-///////////////////////////////////////
-.wp-caption {
-	border: 0px none;
-	margin: 0;
-	padding: 0;
-	width: auto !important;
-}
-.wp-caption-dd {
-	background: @black;
-	background: rgba(red(@black), green(@black), blue(@black), 0.8);
-	color: @white;
-	display: block;
-	font-size: inherit;
-	line-height: inherit;
-	padding: 10px;
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	text-align: left;
-	width: 100%;
+	background: red;
+	clear: both;
+	float: none;
+	margin: 0 0 -2px 0;
+	position: relative;
+	height: 2px;
+	&:after {
+		background-color: fade(red, 10%);
+		border: 1px solid fade(red, 30%);
+		border-radius: 0 0 2px 2px;
+		color: fade(red, 60%);
+		content: "séparateur";
+		font-size: 8px;
+		line-height: 10px;
+		padding: 3px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		text-transform: uppercase;
+	}
 }

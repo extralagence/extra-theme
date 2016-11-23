@@ -2,6 +2,14 @@
 ///////////////////////////////////////
 //
 //
+// THEME VERSION
+//
+//
+///////////////////////////////////////
+define('EXTRA_VERSION', '1.0.0');
+///////////////////////////////////////
+//
+//
 // THEME SETUP
 //
 //
@@ -50,39 +58,50 @@ function extra_theme_less_vars($vars, $handle) {
 	$vars['dark'] = '#333333';
 	$vars['grey'] = '#999999';
 	$vars['lightgrey'] = '#dddddd';
-	$vars['green'] = '#689074';
-	$vars['highlight'] = '#e2424b';
+	$vars['highlight'] = '#0000FF';
 	return $vars;
 }
 add_filter('less_vars', 'extra_theme_less_vars', 10, 2);
 ///////////////////////////////////////
 //
 //
-// ADMIN BAR WEIRD MARGINS
+// RESPONSIVE SIZES
 //
 //
 ///////////////////////////////////////
-function my_admin_bar_init() {
-	remove_action('wp_head', '_admin_bar_bump_cb');
-}
-add_action('admin_bar_init', 'my_admin_bar_init');
-///////////////////////////////////////
-//
-//
-// CUSTOM RESPONSIVE
-//
-//
-///////////////////////////////////////
-function extra_custom_responsive_sizes($sizes) {
+function extra_custom_responsive_sizes( $sizes ) {
 	$sizes = array(
-		'desktop' => 'only screen and (min-width: 961px)',
-		'tablet' => 'only screen and (min-width: 691px) and (max-width: 960px)',
-		'mobile' => 'only screen and (max-width: 690px)'
+		'desktop'       => 'only screen and (min-width: 1221px)',
+		'tablet'        => 'only screen and (max-width: 1220px) and (min-width: 691px)',
+		'mobile'        => 'only screen and (max-width: 690px)'
 	);
 
 	return $sizes;
 }
-add_filter('extra_responsive_sizes', 'extra_custom_responsive_sizes', 10, 1);
+
+add_filter( 'extra_responsive_sizes', 'extra_custom_responsive_sizes', 10, 1 );
+function extra_custom_size_rules( $rules ) {
+	return array(
+		'desktop'       => 1220,
+		'tablet'        => 960,
+		'mobile'        => 690
+	);
+}
+
+add_filter( 'extra_responsive_size_rules', 'extra_custom_size_rules', 10, 1 );
+function extra_custom_content_size_rules( $rules ) {
+	return array(
+		'desktop'       => 1220,
+		'tablet'        => 960,
+		'mobile'        => 690
+	);
+}
+
+add_filter( 'extra_responsive_content_size_rules', 'extra_custom_content_size_rules', 10, 1 );
+function extra_responsive_small_width_limit() {
+	return 1220;
+}
+add_filter('extra_responsive_small_width_limit', 'extra_responsive_small_width_limit');
 ///////////////////////////////////////
 //
 //
@@ -93,3 +112,22 @@ add_filter('extra_responsive_sizes', 'extra_custom_responsive_sizes', 10, 1);
 add_filter('extra_admin_typekit_id', function(){
 	return 'xxxxxxx';
 });
+///////////////////////////////////////
+//
+//
+// SEARCH FORM
+//
+//
+///////////////////////////////////////
+function extra_search_form( $form ) {
+	$form = '
+    	<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+    		<label for="s">' . __( "Une recherche ?", "extra" ) . '</label>
+    		<input type="text" value="' . get_search_query() . '" name="s" id="s" />
+    		<button type="submit" id="searchsubmit">' . __( 'Valider', 'extra' ) . '</button>
+    		<button type="button" class="close"></button>
+    	</form>
+    	';
+
+	return $form;
+}
