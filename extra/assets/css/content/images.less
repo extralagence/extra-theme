@@ -1,0 +1,214 @@
+///////////////////////////////////////
+//
+//
+// IMAGES
+//
+//
+///////////////////////////////////////
+img:not(.placeholder-image) {
+	height: auto;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+.responsiveImagePlaceholder {
+	overflow: hidden;
+}
+.link-image {
+	display: block;
+}
+// For safari ipad only...
+svg.icon {
+	pointer-events: none;
+}
+///////////////////////////////////////
+//
+//
+// IMAGE CAPTIONS
+//
+//
+///////////////////////////////////////
+.wp-caption,
+.fancybox-skin .fancybox-title-over-wrap {
+	color: @highlight;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 300;
+	margin-bottom: 60px;
+	text-align: left;
+	position: relative;
+	max-width: 100%;
+	.wp-caption-text,
+	.wp-caption-dd {
+		opacity: 1;
+		padding: 10px 0 0 30px;
+		position: relative;
+		transition: opacity 300ms ease-in-out;
+		&:before {
+			background: @highlight;
+			content: "";
+			margin: auto;
+			width: 3px;
+			position: absolute;
+			top: -20px;
+			right: auto;
+			bottom: -10px;
+			left: 0;
+			transform-origin: left top;
+			transform: scaleY(1);
+			transition: transform 300ms ease-in-out;
+		}
+	}
+	img {
+		margin: auto;
+	}
+	&.aligncenter {
+		.wp-caption-text,
+		.wp-caption-dd {
+			&:before {
+				margin: auto;
+				width: 60px;
+				height: 4px;
+				position: absolute;
+				top: -2px;
+				right: 0;
+				bottom: auto;
+				left: 0;
+			}
+		}
+	}
+}
+.mceTemp .wp-caption {
+	width: auto !important;
+}
+.size-medium + .wp-caption-text,
+.link-size-medium + .wp-caption-text {
+	max-width: 360px;
+}
+.size-thumbnail + .wp-caption-text,
+.link-size-thumbnail + .wp-caption-text {
+	max-width: 300px;
+}
+///////////////////////////////////////
+//
+//
+// LINK IMAGE
+//
+//
+///////////////////////////////////////
+.content {
+	.link-image img {
+		transition: transform 2000ms linear;
+	}
+	.link-image:hover img {
+		transform: scale(1.1);
+		transition-duration: 5000ms;
+	}
+}
+///////////////////////////////////////
+//
+//
+// > 1200
+//
+//
+///////////////////////////////////////
+@media only screen and (min-width: 1201px) {
+	.content {
+		.size-large {
+			margin-left: -120px;
+			margin-right: -120px;
+			max-width: 1200px;
+			width: auto;
+		}
+		.alignleft.size-medium,
+		.alignleft.size-thumbnail,
+		.alignleft .size-medium,
+		.alignleft .size-thumbnail {
+			margin-left: -120px;
+		}
+	}
+}
+///////////////////////////////////////
+//
+//
+// < 1200
+//
+//
+///////////////////////////////////////
+@media only screen and (max-width: 1220px) {
+	.content .wp-caption {
+		.wp-caption-text {
+			padding-left: 60px;
+			&:before {
+				left: 30px;
+			}
+		}
+	}
+}
+///////////////////////////////////////
+//
+//
+// > 600
+//
+//
+///////////////////////////////////////
+@media only screen and (min-width: 601px) {
+	.content {
+		.alignleft {
+			float: left;
+			margin: 30px 60px 40px 0;
+			max-width: 50%;
+		}
+		.alignright {
+			float: right;
+			margin: 10px 0 25px 40px;
+			max-width: 50%;
+		}
+		.aligncenter {
+			clear: both;
+			display: block;
+			float: none;
+			margin: 40px auto 30px;
+			text-align: center;
+		}
+		.alignnone:not(.wp-caption):not(.size-large) {
+			clear: both;
+			display: block;
+			float: none;
+			margin: 40px 0 30px;
+		}
+		.alignleft + *:not(.responsiveImagePlaceholder):not(img):not(.link-image),
+		.alignright + *:not(.responsiveImagePlaceholder):not(img):not(.link-image),
+		.link-alignleft + *:not(.responsiveImagePlaceholder):not(img):not(.link-image),
+		.link-alignright + *:not(.responsiveImagePlaceholder):not(img):not(.link-image) {
+			margin-top: 60px;
+		}
+	}
+}
+///////////////////////////////////////
+//
+//
+// < 600
+//
+//
+///////////////////////////////////////
+@media only screen and (max-width: 600px) {
+	.content {
+		.alignleft,
+		.alignright,
+		.aligncenter,
+		.alignnone {
+			clear: both;
+			display: block;
+			float: none;
+			margin: 0 auto 30px;
+		}
+		.wp-caption {
+			.wp-caption-text {
+				padding-left: 20px;
+				&:before {
+					left: 10px;
+				}
+			}
+		}
+	}
+}

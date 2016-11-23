@@ -1,0 +1,42 @@
+///////////////////////////////////////
+//
+//
+// QUOTES
+//
+//
+///////////////////////////////////////
+.content {
+	blockquote {
+		font-weight: 100;
+		font-style: italic;
+		margin: 30px 0;
+		padding: 45px 0 0 0;
+		position: relative;
+		@media only screen and (max-width: 600px) {
+			padding-left: 60px;
+		}
+		&:before {
+			color: @lightgrey;
+			content: "\201C";
+			display: block;
+			font-family: Georgia, serif;
+			font-size: 100px;
+			font-style: normal;
+			font-weight: normal;
+			position: absolute;
+			top: 30px;
+			left: 0;
+			width: 40px;
+			height: 40px;
+		}
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+	.author,
+	blockquote .author {
+		font-size: 14px;
+		font-weight: 400;
+		font-style: italic;
+	}
+}

@@ -1,0 +1,258 @@
+///////////////////////////////////////
+//
+//
+// FANCYBOX HEADER
+//
+//
+///////////////////////////////////////
+.extra-fancybox-header {
+	background: transparent;
+	color: @dark;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	transform: translate3d(0, -125px, 0);
+	transition: transform 0.3s ease-out;
+	vertical-align: middle;
+	width: 100%;
+	height: 100px;
+	.extra-fancybox-open & {
+		transform: translate3d(0, 0, 0);
+		transition-delay: 150ms;
+	}
+	///////////////////////////////////////
+	//
+	//
+	// COUNTER
+	//
+	//
+	///////////////////////////////////////
+	.extra-fancybox-counter {
+		align-items: center;
+		justify-content: center;
+		color: @dark;
+		display: flex;
+		font-size: 20px;
+		font-weight: 300;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 95;
+		text-align: center;
+		text-transform: uppercase;
+		.text {
+			position: relative;
+		}
+		.current {
+			font-weight: 700;
+			color: @highlight;
+		}
+	}
+	///////////////////////////////////////
+	//
+	//
+	// BUTTONS
+	//
+	//
+	///////////////////////////////////////
+	.extra-fancybox-buttons-wrapper {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		z-index: 99;
+		display: flex;
+		.extra-fancybox-nav {
+			align-items: center;
+			background: @highlight;
+			display: flex;
+			justify-content: center;
+			margin-left: 10px;
+			overflow: hidden;
+			width: 40px;
+			height: 40px;
+			position: relative;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			.icon {
+				display: block;
+				fill: @white;
+				width: 100%;
+				height: 15px;
+			}
+			&.extra-fancybox-prev {
+				transform: rotate(180deg);
+			}
+			&:after {
+				background: @dark;
+				content: "";
+				margin: auto;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: -1;
+				transform-origin: left center;
+				transform: scaleX(0);
+				transition: transform 300ms ease-in-out;
+			}
+			&:hover:after,
+			&:focus:after {
+				transform: scaleX(1);
+			}
+		}
+	}
+	///////////////////////////////////////
+	//
+	//
+	// CLOSE
+	//
+	//
+	///////////////////////////////////////
+	.extra-fancybox-close {
+		.icon-close {
+			display: block;
+			width: 21px;
+			height: 21px;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			transform: rotate(45deg);
+			transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+			&:before,
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				background-color: @white;
+				transition: transform 0.3s ease-out;
+			}
+			&:before {
+				width: 100%;
+				height: 3px;
+				top: 50%;
+				left: 0;
+				margin-top: -2px;
+			}
+			&:after {
+				width: 3px;
+				height: 100%;
+				top: 0;
+				left: 50%;
+				margin-left: -2px;
+			}
+		}
+		&:hover {
+			.icon-close {
+				opacity: 1;
+				-webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.2s ease-out;
+				transition: transform 0.3s ease-out, opacity 0.2s ease-out;
+
+				&:before {
+					transform: rotate(90deg);
+				}
+				&:after {
+					transform: rotate(270deg);
+				}
+			}
+		}
+	}
+	// < 600
+	@media only screen and (max-width: 600px) {
+		height: 60px;
+		padding: 10px;
+		.extra-fancybox-counter {
+			justify-content: flex-start;
+		}
+		.extra-fancybox-buttons-wrapper {
+			top: 10px;
+			right: 10px;
+		}
+	}
+}
+///////////////////////////////////////
+//
+//
+// LEGEND
+//
+//
+///////////////////////////////////////
+.fancybox-skin .fancybox-outer .fancybox-title-over-wrap {
+	background: transparent;
+	color: @highlight;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 400;
+	margin: 15px 0 0 120px;
+	opacity: 0;
+	padding: 0 20px 20px 30px;
+	transform: translateY(-100%);
+	transition: all 300ms ease-in-out;
+	transition-property: transform, opacity;
+	transition-delay: 300ms, 300ms;
+	&:before {
+		background: @highlight;
+		content: "";
+		margin: auto;
+		width: 3px;
+		position: absolute;
+		top: auto;
+		right: auto;
+		bottom: 5px;
+		left: 0;
+		height: 70px;
+		transform-origin: left bottom;
+		transform: scaleY(0);
+		transition: transform 300ms ease-in-out;
+		transition-delay: 500ms;
+	}
+	.extra-fancybox-open & {
+		opacity: 1;
+		transform: translateY(0%);
+		&:before {
+			transform: scaleY(1);
+		}
+	}
+	// < 600
+	@media only screen and (max-width: 600px) {
+		margin-left: 10px;
+		padding-left: 10px;
+	}
+}
+///////////////////////////////////////
+//
+//
+// FANCYBOX OVERRIDE
+//
+//
+///////////////////////////////////////
+.fancybox-lock .fancybox-overlay {
+	overflow: hidden;
+}
+.fancybox-wrap {
+	transform: none;
+}
+.extra-fancybox-open {
+	.fancybox-skin {
+		box-shadow: none;
+	}
+}
+.fancybox-skin,
+.fancybox-opened .fancybox-skin {
+	background: transparent;
+}
+.extra-fancybox-hidden {
+	opacity: 0;
+	transition: none;
+	& + .wp-caption-text,
+	& + .wp-caption-dd {
+		opacity: 0;
+		&:before {
+			transform: scaleY(0);
+		}
+	}
+}

@@ -1,0 +1,116 @@
+// SHARE
+.share {
+	background-color: @lightgrey;
+	align-items: center;
+	clear: both;
+	display: flex;
+	margin: 60px 0 10px 0;
+	padding: 0 0 0 20px;
+	position: relative;
+	height: 60px;
+	max-width: 960px;
+	.button-share {
+		background: transparent;
+		color: @dark;
+		flex: 0 0 auto;
+		padding: 2px 0 0 40px;
+		position: relative;
+		transition: color 300ms ease-in-out;
+		.icon {
+			fill: @dark;
+			position: absolute;
+			top: 6px;
+			left: 1px;
+			width: 19px;
+			height: 20px;
+			transition: fill 300ms ease-in-out;
+		}
+		&:hover {
+			color: @highlight;
+		}
+		&.active {
+			color: @highlight;
+		}
+		&:hover .icon {
+			fill: @highlight;
+		}
+		&.active .icon {
+			fill: @highlight;
+		}
+	}
+	.extra-social-wrapper {
+		align-items: center;
+		display: flex;
+		flex: 1 1 auto;
+		margin-left: 30px;
+		overflow: hidden;
+		height: 100%;
+		@media only screen and (max-width: 330px) {
+			margin-left: 10px;
+		}
+	}
+	.extra-social-button {
+		background-color: @highlight;
+		border-radius: 100%;
+		display: inline-block;
+		margin: 0 0 0 10px;
+		position: relative;
+		transition: background-color 300ms ease-in-out;
+		vertical-align: top;
+		width: 30px;
+		height: 30px;
+		&:active,
+		&:hover {
+			background-color: @highlight;
+		}
+		& .icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -8px;
+			margin-left: -8px;
+			height: 16px;
+			width: 16px;
+		}
+		& .icon {
+			fill: @white;
+		}
+	}
+	h3 {
+		font-size: 30px;
+		line-height: 40px;
+		padding: 30px 0;
+	}
+	.back-to-top {
+		display: block;
+		flex: 0 0 auto;
+		width: 60px;
+		height: 60px;
+		.icon {
+			display: block;
+			fill: @dark;
+			margin: 0 0 0 23px;;
+			transform-origin: center;
+			transform: rotate(-90deg);
+			transition: all 300ms ease-out;
+			transition-property: fill, transform;
+			width: 12px;
+			height: 12px;
+		}
+		&:hover .icon {
+			fill: @highlight;
+		}
+		&:active .icon {
+			transform: rotate(-90deg) translateX(3px);
+		}
+	}
+	@media only screen and (max-width: 690px) {
+		padding-left: 0;
+		.button-share {
+			display: none;
+		}
+		.extra-social-button {
+			transform: none !important;
+		}
+	}
+}
